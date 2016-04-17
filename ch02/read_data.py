@@ -6,4 +6,5 @@
 @Time: 4/16/16 6:52 PM
 '''
 import pandas as pd
-data = pd.read_csv('') # 从csv文件读取数据
+data = pd.read_csv('../data/ch02/titanic3.csv') # 从csv文件读取数据
+print(data.head())
