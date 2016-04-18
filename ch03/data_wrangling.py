@@ -29,8 +29,12 @@ subdata = data[sublist]
 print subdata.head()
 
 # 选择row
-data1 = data[data['Account Length'] > 500]
+data1 = data[data['Account Length'] > 100]
 print data1.shape
 
 data1 = data[data['State'] == 'VA']
+print data1.shape
+
+# 两种选择方式组合
+data1 = data[(data['Account Length'] > 100) | (data['State'] == 'VA')]
 print data1.shape
