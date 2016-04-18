@@ -23,3 +23,9 @@ plt.xlabel('Day Calls Value')               # x坐标显示的文字
 plt.ylabel('Frequency')                     # y坐标显示的文字
 plt.title('Frequency of Day Calls')         # 整张图的标题
 plt.show()
+
+# 画一个boxplot图
+plt.boxplot(data['Day Calls'])
+plt.ylabel('Day Calls')
+plt.title('Box Plot of Day Calls')
+plt.show()
