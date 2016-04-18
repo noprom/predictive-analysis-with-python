@@ -15,6 +15,9 @@ print data.describe()                   # 描述数据
 print data.columns.values               # 打印表头
 print data.dtypes                       # 打印数据的类型
 print pd.isnull(data['body'])           # 打印body这一列是否为null
+print pd.isnull(data['body']).values.ravel().sum()  # 打印为null的个数
+print data['body']                      # 打印body这一列
+print data['body'].fillna(0)            # 将NaN替换为0
 
 # 使用 open 函数来打开
 data = open('../data/ch02/Customer Churn Model.txt', 'r')
