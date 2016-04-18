@@ -33,3 +33,8 @@ print data['age'].fillna(method='backfill') # 使用后面最近的来替换
 # 将性别分别转化为0和1
 dummy_sex = pd.get_dummies(data=data['sex'], prefix='sex')
 print dummy_sex
+# 将性别那一列用数字替换
+column_name=data.columns.values.tolist()
+column_name.remove('sex')
+data = data[column_name].join(dummy_sex)
+print data.head(5)
