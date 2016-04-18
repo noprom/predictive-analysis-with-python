@@ -16,3 +16,10 @@ data.plot(kind='scatter', x='Night Mins', y='Night Charge', ax=axs[0][1])
 data.plot(kind='scatter', x='Day Calls', y='Day Charge', ax=axs[1][0])
 data.plot(kind='scatter', x='Night Calls', y='Night Charge', ax=axs[1][1])
 plt.show()
+
+# 画一个histogram图
+plt.hist(data['Day Calls'],bins=8)
+plt.xlabel('Day Calls Value')               # x坐标显示的文字
+plt.ylabel('Frequency')                     # y坐标显示的文字
+plt.title('Frequency of Day Calls')         # 整张图的标题
+plt.show()
