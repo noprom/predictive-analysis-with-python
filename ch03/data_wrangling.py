@@ -27,3 +27,10 @@ column_list = data.columns.values.tolist()
 sublist = [x for x in column_list if x not in wanted]
 subdata = data[sublist]
 print subdata.head()
+
+# 选择row
+data1 = data[data['Account Length'] > 500]
+print data1.shape
+
+data1 = data[data['State'] == 'VA']
+print data1.shape
