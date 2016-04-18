@@ -19,6 +19,8 @@ print pd.isnull(data['body']).values.ravel().sum()  # 打印为null的个数
 print data['body']                      # 打印body这一列
 print data['body'].fillna(0)            # 将NaN替换为0
 print data['age'].fillna(data['age'].mean()) # 用平均数替换NaN
+print data['age'].fillna(method='ffill') # 使用前面最近的来替换
+print data['age'].fillna(method='backfill') # 使用后面最近的来替换
 
 # 使用 open 函数来打开
 data = open('../data/ch02/Customer Churn Model.txt', 'r')
