@@ -20,3 +20,10 @@ print type(subdata)
 wanted_columns = ['Account Length', 'VMail Message', 'Day Calls']
 subdata = data[wanted_columns]
 print subdata.head()
+
+# 选择不需要的列
+wanted = ['Account Length', 'VMail Message', 'Day Calls']
+column_list = data.columns.values.tolist()
+sublist = [x for x in column_list if x not in wanted]
+subdata = data[sublist]
+print subdata.head()
