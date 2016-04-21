@@ -42,3 +42,7 @@ print data1.shape
 # 选择sub row
 subdata_first_50 = data[['Account Length', 'VMail Message', 'Day Calls']][1:50]
 print subdata_first_50
+
+# 使用ix方法也可以选择row
+# 不用版本的python可能不同
+print data.ix[1:10, 1:6]
