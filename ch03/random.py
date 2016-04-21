@@ -41,3 +41,8 @@ print a
 
 # choice, 从一个list中随机选择一个元素
 print np.random.choice(a)
+
+# 使用随机数种子,每次得到的结果都是一样的
+np.random.seed(1)
+for i in range(5):
+    print np.random.random()
