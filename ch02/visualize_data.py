@@ -5,6 +5,7 @@
 @Author: tyee.noprom@qq.com
 @Time: 4/18/16 8:07 PM
 '''
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -28,4 +29,10 @@ plt.show()
 plt.boxplot(data['Day Calls'])
 plt.ylabel('Day Calls')
 plt.title('Box Plot of Day Calls')
+plt.show()
+
+# 生成正态分布的随机数,并且显示
+x = range(1, 101)
+y = np.random.uniform(1, 100, 100)
+plt.hist(y)
 plt.show()
