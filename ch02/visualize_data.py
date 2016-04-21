@@ -47,3 +47,8 @@ plt.show()
 a = np.random.randn(2, 4)
 # mean 1.5 and standard deviation 2.5
 a = 2.5 * np.random.randn(100) + 1.5
+# 画一个标准正态分布
+a = np.random.randn(100000)
+b = range(1, 101)
+plt.hist(a)
+plt.show()
