@@ -38,3 +38,7 @@ print data1.shape
 # 两种选择方式组合
 data1 = data[(data['Account Length'] > 100) | (data['State'] == 'VA')]
 print data1.shape
+
+# 选择sub row
+subdata_first_50 = data[['Account Length', 'VMail Message', 'Day Calls']][1:50]
+print subdata_first_50
