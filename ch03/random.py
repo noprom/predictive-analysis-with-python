@@ -38,3 +38,6 @@ a = range(10)
 print a
 np.random.shuffle(a)
 print a
+
+# choice, 从一个list中随机选择一个元素
+print np.random.choice(a)
