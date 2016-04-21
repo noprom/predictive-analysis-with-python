@@ -19,10 +19,10 @@ data.plot(kind='scatter', x='Night Calls', y='Night Charge', ax=axs[1][1])
 plt.show()
 
 # 画一个histogram图
-plt.hist(data['Day Calls'],bins=8)
-plt.xlabel('Day Calls Value')               # x坐标显示的文字
-plt.ylabel('Frequency')                     # y坐标显示的文字
-plt.title('Frequency of Day Calls')         # 整张图的标题
+plt.hist(data['Day Calls'], bins=8)
+plt.xlabel('Day Calls Value')  # x坐标显示的文字
+plt.ylabel('Frequency')  # y坐标显示的文字
+plt.title('Frequency of Day Calls')  # 整张图的标题
 plt.show()
 
 # 画一个boxplot图
@@ -33,7 +33,7 @@ plt.show()
 
 # 生成正态分布的随机数,并且显示
 x = range(1, 101)
-y = np.random.uniform(1, 100, 1000000)     # 数据量越大就越符合正态分布的图
+y = np.random.uniform(1, 100, 1000000)  # 数据量越大就越符合正态分布的图
 plt.hist(y)
 plt.show()
 
@@ -42,3 +42,8 @@ x = range(1, 101)
 y = np.random.randn(100)
 plt.plot(x, y)
 plt.show()
+
+# get a 2 x 4 array of numbers following a standard normal distribution
+a = np.random.randn(2, 4)
+# mean 1.5 and standard deviation 2.5
+a = 2.5 * np.random.randn(100) + 1.5
