@@ -8,12 +8,12 @@
 import numpy as np
 
 # 生成一个随机整数
-random = np.random.randint(1, 100)
-print random
+random_num = np.random.randint(1, 100)
+print random_num
 
 # 生成一个0到1的随机小数
-random = np.random.random()
-print random
+random_num = np.random.random()
+print random_num
 
 
 # 生成n个随机数
@@ -32,3 +32,9 @@ def randint_range(n, a, b):
 
 
 print randint_range(10, 2, 1000)
+
+# shuffle, 随机打算数据
+a = range(10)
+print a
+np.random.shuffle(a)
+print a
