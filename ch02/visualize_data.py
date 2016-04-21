@@ -33,6 +33,12 @@ plt.show()
 
 # 生成正态分布的随机数,并且显示
 x = range(1, 101)
-y = np.random.uniform(1, 100, 100)
+y = np.random.uniform(1, 100, 1000000)     # 数据量越大就越符合正态分布的图
 plt.hist(y)
+plt.show()
+
+# 生成标准正太分布
+x = range(1, 101)
+y = np.random.randn(100)
+plt.plot(x, y)
 plt.show()
