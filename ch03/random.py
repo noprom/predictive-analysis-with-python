@@ -16,6 +16,7 @@ random = np.random.random()
 print random
 
 
+# 生成n个随机数
 def randint_range(n, a, b):
     '''
     生成n个a~b之间的随机数
@@ -28,3 +29,6 @@ def randint_range(n, a, b):
     for i in range(n):
         x.append(np.random.randint(a, b))
     return x
+
+
+print randint_range(10, 2, 1000)
