@@ -92,3 +92,7 @@ print grouped.aggregate([np.sum, np.mean, np.std])
 
 # Filter data
 print grouped['Age'].filter(lambda x: x.sum() > 700)
+
+# Transform data
+zscore = lambda x: (x - x.mean()) / x.std()
+print grouped.transform(zscore).head(10)
