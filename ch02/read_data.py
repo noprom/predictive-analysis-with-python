@@ -61,3 +61,10 @@ income = 1500 * np.random.randn(100) + 15000
 df = pd.DataFrame({'Gender': gender, 'Height': height, 'Weight': weight, 'Age': age,
                    'Income': income, 'Socio-Eco': seb})
 print df.head()
+
+# group data
+grouped = df.groupby('Gender')
+print grouped.groups
+for names, groups in grouped:
+    print names
+    print groups
