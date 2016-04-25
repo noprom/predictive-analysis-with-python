@@ -68,3 +68,5 @@ print grouped.groups
 for names, groups in grouped:
     print names
     print groups
+# 筛选其中的group
+print grouped.get_group('Female')
