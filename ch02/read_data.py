@@ -44,3 +44,20 @@ print data.head(5)
 # 使用data frame
 data = pd.DataFrame({'A': np.random.randn(10), 'B': 2.5 * np.random.randn(10) + 1.5}, index=range(10, 20))
 print data
+
+# Group data
+
+a = ['Male', 'Female']
+b = ['Rich', 'Poor', 'Middle Class']
+gender = []
+seb = []
+for i in range(1, 101):
+    gender.append(np.random.choice(a))
+    seb.append(np.random.choice(b))
+height = 30 * np.random.randn(100) + 155
+weight = 20 * np.random.randn(100) + 60
+age = 10 * np.random.randn(100) + 35
+income = 1500 * np.random.randn(100) + 15000
+df = pd.DataFrame({'Gender': gender, 'Height': height, 'Weight': weight, 'Age': age,
+                   'Income': income, 'Socio-Eco': seb})
+print df.head()
