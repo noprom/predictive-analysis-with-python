@@ -108,3 +108,8 @@ print grouped.tail(1)
 # we can use the nth function to get the nth row from a group
 grouped = df.groupby('Gender')
 print grouped.nth(1)
+
+# Suppose, you want to look at the youngest male and female members of this data frame.
+df1 = df.sort_values(['Age', 'Income'])
+grouped = df1.groupby('Gender')
+grouped.head(1)
