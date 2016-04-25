@@ -81,3 +81,5 @@ for names, groups in grouped:
 print grouped.sum()
 print grouped.size()
 print grouped.describe()
+grouped_income = grouped['Income']
+print grouped_income
