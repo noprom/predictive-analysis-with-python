@@ -83,3 +83,5 @@ print grouped.size()
 print grouped.describe()
 grouped_income = grouped['Income']
 print grouped_income
+# customize aggregation
+print grouped.aggregate({'Income': np.sum, 'Age': np.mean, 'Height': np.std})
