@@ -70,3 +70,9 @@ for names, groups in grouped:
     print groups
 # 筛选其中的group
 print grouped.get_group('Female')
+
+# 多个字段group
+grouped = df.groupby(['Gender', 'Socio-Eco'])
+for names, groups in grouped:
+    print names
+    print groups
