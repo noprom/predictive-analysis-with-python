@@ -79,3 +79,5 @@ for names, groups in grouped:
 
 # Aggregation data
 print grouped.sum()
+print grouped.size()
+print grouped.describe()
