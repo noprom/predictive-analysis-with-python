@@ -96,3 +96,7 @@ print grouped['Age'].filter(lambda x: x.sum() > 700)
 # Transform data
 zscore = lambda x: (x - x.mean()) / x.std()
 print grouped.transform(zscore).head(10)
+
+# it can be used to fill the missing values with the mean of the non-missing values
+f = lambda x: x.fillna(x.mean())
+print grouped.transform(f)
