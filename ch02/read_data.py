@@ -113,3 +113,11 @@ print grouped.nth(1)
 df1 = df.sort_values(['Age', 'Income'])
 grouped = df1.groupby('Gender')
 grouped.head(1)
+
+# Random sampling – splitting a dataset in training and testing datasets
+a = np.random.randn(len(data))
+print a
+check = a < 0.8
+training = data[check]
+testing = data[~check]
+print 1.0 * len(training) / len(testing)
