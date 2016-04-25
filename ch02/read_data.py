@@ -76,3 +76,6 @@ grouped = df.groupby(['Gender', 'Socio-Eco'])
 for names, groups in grouped:
     print names
     print groups
+
+# Aggregation data
+print grouped.sum()
