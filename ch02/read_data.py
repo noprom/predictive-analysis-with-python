@@ -115,9 +115,17 @@ grouped = df1.groupby('Gender')
 grouped.head(1)
 
 # Random sampling – splitting a dataset in training and testing datasets
+# Method 1 – using the Customer Churn Model
 a = np.random.randn(len(data))
 print a
 check = a < 0.8
 training = data[check]
 testing = data[~check]
 print 1.0 * len(training) / len(testing)
+
+# Method 2 – using sklearn
+from sklearn.cross_validation import train_test_split
+
+train, test = train_test_split(data, test_size=0.2)
+print 1.0 * len(train) / len(test)
+
