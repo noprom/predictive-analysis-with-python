@@ -89,3 +89,6 @@ print grouped.aggregate({'Income': np.sum, 'Age': np.mean, 'Height': np.std})
 print grouped.aggregate({'Age': np.mean, 'Height': lambda x: np.mean(x) / np.std(x)})
 # apply several functions to all the columns at the same time
 print grouped.aggregate([np.sum, np.mean, np.std])
+
+# Filter data
+print grouped['Age'].filter(lambda x: x.sum() > 700)
