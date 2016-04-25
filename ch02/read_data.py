@@ -85,3 +85,5 @@ grouped_income = grouped['Income']
 print grouped_income
 # customize aggregation
 print grouped.aggregate({'Income': np.sum, 'Age': np.mean, 'Height': np.std})
+# use lambda
+print grouped.aggregate({'Age': np.mean, 'Height': lambda x: np.mean(x) / np.std(x)})
