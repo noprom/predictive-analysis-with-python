@@ -100,3 +100,7 @@ print grouped.transform(zscore).head(10)
 # it can be used to fill the missing values with the mean of the non-missing values
 f = lambda x: x.fillna(x.mean())
 print grouped.transform(f)
+
+# Miscellaneous operations
+print grouped.head(1)
+print grouped.tail(1)
