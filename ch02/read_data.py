@@ -104,3 +104,7 @@ print grouped.transform(f)
 # Miscellaneous operations
 print grouped.head(1)
 print grouped.tail(1)
+
+# we can use the nth function to get the nth row from a group
+grouped = df.groupby('Gender')
+print grouped.nth(1)
