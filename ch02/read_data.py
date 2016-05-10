@@ -151,3 +151,19 @@ data1_middle = data1[500:550]
 data1_tail = data1.tail(50)
 wine_scramble = pd.concat([data1_middle, data1_head, data1_tail], axis=0)
 print wine_scramble.shape
+
+# 将小文件合并
+filepath = "../data/ch03/lotofdata"
+data_final = pd.read_csv(filepath + "/001.csv")
+for i in range(1, 333):
+    if i < 10:
+        filename = '0' + '0' + str(i) + '.csv'
+    if 10 <= i < 100:
+        filename = '0' + str(i) + '.csv'
+    if i >= 100:
+        filename = str(i) + '.csv'
+    file = filepath + '/' + filename
+    data = pd.read_csv(file)
+    data_final = pd.concat([data_final, data], axis=0)
+
+print data_final.tail(1)
