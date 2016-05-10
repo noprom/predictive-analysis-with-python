@@ -218,3 +218,7 @@ print len(data_main_dlt)
 # Left join demo
 merged_inner = pd.merge(left=data_main, right=country_map_dlt, how='inner', left_on='Athlete', right_on='Athlete')
 print len(merged_inner)
+
+# Right join demo
+merged_right = pd.merge(left=data_main_dlt, right=country_map_dp, how='right', left_on='Athlete', right_on='Athlete')
+print len(merged_right)
