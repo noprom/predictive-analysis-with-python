@@ -184,5 +184,11 @@ sports_map = pd.read_csv("../data/ch03/Medals/Athelete_Sports_Map.csv")
 print sports_map.head(10)
 
 # Merge
-merged = pd.merge(left=data_main, right=country_map, left_on='Athlete', right_on='Athlete')
-print merged.head()
+# filter first
+country_map_dp = country_map.drop_duplicates(subset='Athlete')
+merged_dp = pd.merge(left=data_main, right=country_map_dp, left_on='Athlete', right_on='Athlete')
+print merged_dp.head()
+sports_map_dp = sports_map.drop_duplicates(subset='Athlete')
+len(sports_map_dp)
+merged_final = pd.merge(left=merged_dp, right=sports_map_dp, left_on='Athlete', right_on='Athlete')
+merged_final.head()
