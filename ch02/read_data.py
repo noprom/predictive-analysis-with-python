@@ -170,8 +170,19 @@ print wine_scramble.shape
 # print data_final.tail(1)
 
 # Join and merge operation
+# Records
 data_main = pd.read_csv("../data/ch03/Medals/Medals.csv")
 print data_main.head(10)
 # 除重
 a = data_main['Athlete'].unique().tolist()
 print len(a)
+# Country
+country_map = pd.read_csv("../data/ch03/Medals/Athelete_Country_Map.csv")
+print country_map.head(10)
+# Sports
+sports_map = pd.read_csv("../data/ch03/Medals/Athelete_Sports_Map.csv")
+print sports_map.head(10)
+
+# Merge
+merged = pd.merge(left=data_main, right=country_map, left_on='Athlete', right_on='Athlete')
+print merged.head()
