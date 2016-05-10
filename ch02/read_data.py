@@ -129,3 +129,4 @@ from sklearn.cross_validation import train_test_split
 train, test = train_test_split(data, test_size=0.2)
 print 1.0 * len(train) / len(test)
 
+# Method 3 – using the shuffle function
