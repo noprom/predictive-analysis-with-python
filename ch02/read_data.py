@@ -192,3 +192,29 @@ sports_map_dp = sports_map.drop_duplicates(subset='Athlete')
 len(sports_map_dp)
 merged_final = pd.merge(left=merged_dp, right=sports_map_dp, left_on='Athlete', right_on='Athlete')
 merged_final.head()
+
+# Delete some data
+country_map_dlt = country_map_dp[(country_map_dp['Athlete'] <> 'Michael Phelps') &
+                                 (country_map_dp['Athlete'] <> 'Natalie Coughlin') &
+                                 (country_map_dp['Athlete'] <> 'Chen Jing') &
+                                 (country_map_dp['Athlete'] <> 'Richard Thompson') &
+                                 (country_map_dp['Athlete'] <> 'Matt Ryan')]
+print len(country_map_dlt)
+
+sports_map_dlt = sports_map_dp[(sports_map_dp['Athlete'] <> 'Michael Phelps') &
+                               (sports_map_dp['Athlete'] <> 'Natalie Coughlin') &
+                               (sports_map_dp['Athlete'] <> 'Chen Jing') &
+                               (sports_map_dp['Athlete'] <> 'Richard Thompson') &
+                               (sports_map_dp['Athlete'] <> 'Matt Ryan')]
+print len(sports_map_dlt)
+
+data_main_dlt = data_main[(data_main['Athlete'] <> 'Michael Phelps') &
+                          (data_main['Athlete'] <> 'Natalie Coughlin') &
+                          (data_main['Athlete'] <> 'Chen Jing') &
+                          (data_main['Athlete'] <> 'Richard Thompson') &
+                          (data_main['Athlete'] <> 'Matt Ryan')]
+print len(data_main_dlt)
+
+# Left join demo
+merged_inner = pd.merge(left=data_main, right=country_map_dlt, how='inner', left_on='Athlete', right_on='Athlete')
+print len(merged_inner)
