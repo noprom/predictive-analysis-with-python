@@ -130,3 +130,18 @@ train, test = train_test_split(data, test_size=0.2)
 print 1.0 * len(train) / len(test)
 
 # Method 3 – using the shuffle function
+print("Concatenating and appending data\n")
+data1 = pd.read_csv('../data/ch03/winequality-red.csv', sep=';')
+print data1.head(10)
+print data1.columns.values
+print data1.shape
+
+data2 = pd.read_csv('../data/ch03/winequality-white.csv', sep=';')
+print data2.head(10)
+print data2.columns.values
+print data2.shape
+
+# Concat
+wine_total = pd.concat([data1, data2], axis=0)
+print wine_total.head(10)
+print wine_total.shape
