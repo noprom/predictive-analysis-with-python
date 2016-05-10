@@ -145,3 +145,9 @@ print data2.shape
 wine_total = pd.concat([data1, data2], axis=0)
 print wine_total.head(10)
 print wine_total.shape
+
+data1_head = data1.head(50)
+data1_middle = data1[500:550]
+data1_tail = data1.tail(50)
+wine_scramble = pd.concat([data1_middle, data1_head, data1_tail], axis=0)
+print wine_scramble.shape
