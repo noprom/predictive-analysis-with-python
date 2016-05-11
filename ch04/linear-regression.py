@@ -32,3 +32,10 @@ plt.plot(x, yact, 'ro')
 plt.plot(x, yavg)
 plt.title('Actual vs Predicted')
 plt.show()
+
+# calculate RR
+df['SSR'] = (df['Predicted_Output(ypred)'] - ymean) ** 2
+df['SST'] = (df['Actual_Output(yact)'] - ymean) ** 2
+SSR = df.sum()['SSR']
+SST = df.sum()['SST']
+print SSR / SST
