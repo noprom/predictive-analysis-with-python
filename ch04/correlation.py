@@ -7,6 +7,7 @@
 '''
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 advert = pd.read_csv("../data/ch05/Advertising.csv")
 print advert.head()
@@ -29,3 +30,7 @@ def corrcoeff(df, var1, var2):
 
 corrcoeff_val = corrcoeff(advert, 'TV', 'Sales')
 print corrcoeff_val
+# draw the relationship between TV and Sales
+plt.plot(advert['TV'], advert['Sales'], 'ro')
+plt.title('TV vs Sales')
+plt.show()
