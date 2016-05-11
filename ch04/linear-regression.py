@@ -31,7 +31,7 @@ plt.plot(x, ypred)
 plt.plot(x, yact, 'ro')
 plt.plot(x, yavg)
 plt.title('Actual vs Predicted')
-plt.show()
+# plt.show()
 
 # calculate RR
 df['SSR'] = (df['Predicted_Output(ypred)'] - ymean) ** 2
@@ -39,3 +39,14 @@ df['SST'] = (df['Actual_Output(yact)'] - ymean) ** 2
 SSR = df.sum()['SSR']
 SST = df.sum()['SST']
 print SSR / SST
+
+# Find the best alpha and beta
+xmean = np.mean(df['Input_Variable(X)'])
+ymean = np.mean(df['Actual_Output(yact)'])
+df['beta'] = (df['Input_Variable(X)'] - xmean) * (df['Actual_Output(yact)'] - ymean)
+df['xvar'] = (df['Input_Variable(X)'] - xmean) ** 2
+betan = df.sum()['beta']
+betad = df.sum()['xvar']
+beta = betan / betad
+alpha = ymean - (betan / betad) * xmean
+print beta, alpha
