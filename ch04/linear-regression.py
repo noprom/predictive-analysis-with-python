@@ -49,4 +49,18 @@ betan = df.sum()['beta']
 betad = df.sum()['xvar']
 beta = betan / betad
 alpha = ymean - (betan / betad) * xmean
-print beta, alpha
+print alpha, beta
+
+df['ymodel'] = beta * df['Input_Variable(X)'] + alpha
+df['SSR'] = (df['ymodel'] - ymean) ** 2
+df['SST'] = (df['Actual_Output(yact)'] - ymean) ** 2
+SSR = df.sum()['SSR']
+SST = df.sum()['SST']
+print SSR / SST
+
+plt.plot(x, ypred)
+plt.plot(x, df['ymodel'])
+plt.plot(x, yact, 'ro')
+plt.plot(x, yavg)
+plt.title('Actual vs Predicted vs Model')
+plt.show()
